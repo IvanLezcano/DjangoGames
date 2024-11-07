@@ -1,0 +1,41 @@
+
+    <html>
+    <body style= "background-color: red";>
+        {#asi se incluyen otros html ahi#}
+
+        {% include "header.html" %}
+    
+    <h1>
+    Primera plantilla de saludo
+    </h1>
+    <p>el nombre guardado es: {{nombre_persona}} y hoy es el dia {{fecha.day}} de {{fecha.month}}</p> <!--puedo acceder a los mensajes de objetos cuando uso el contexto--> 
+    <p>{{nombreObjeto}} {{apellidoObjbeto}} es fan del {{generos.1}}</p>
+</body>
+
+    <p>
+
+
+
+        <ul>
+        
+        
+        sin embargo existen todos estos generos
+        {%for genero in generos%}
+            <p> <li>{{genero}}</li></p>
+        {%endfor%}
+    {#el "|" es un filtro, hay miles de filtros asi y se encadenan si queres#}
+    {% if listita|length < 5 %}  <!--no me di cuenta de que al hacer comparativas van separados bien, porque se usa asi el lenght?-->
+        <p>aunque sin re pocos</p>
+    {% else %}
+        <p>que son bastantes</p>
+    {% endif %}
+    
+    </ul>
+    </p>
+
+
+
+    {% include "footer/footer.html" %}
+
+    </html> 
+    {#asi se hacen mejores comentarios jajaja#}
